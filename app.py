@@ -1,11 +1,12 @@
 from flask import Flask , request, jsonify
 from web_crawler import wc
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def HelloFask():
-   return jsonify({'send':'hello flask'})
+   return jsonify({"send" : "hello flask"})
 
 
 @app.route('/aw')
@@ -16,12 +17,15 @@ def aw():
     urls = url.split(',')
 
     if len(urls) >= 2:
-        for i in range(len(urls) - 1):
+
+        i = 0
+
+        for i in range(0,len(urls) - 1):
             num = num + wc.Amount_words(word,urls[i]).amount_words_result()
-        return jsonify({'result': num})
+        return jsonify({"result": num})
     else:
         num = wc.Amount_words(word,url).amount_words_result()
-        return jsonify({'result': num})
+        return jsonify({"result": num})
 
 #http://127.0.0.1:5000/aw?word=Netflix&url=http://www.adorocinema.com/noticias/series/noticia-144072/
 

@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup as bs , UnicodeDammit
+from bs4 import BeautifulSoup as bs
 from requests import get
 import unicodedata
 
@@ -26,13 +26,14 @@ class Amount_words():
 
         page_text_S = str(self.get_page_text()).strip('/n').strip('/t').replace(',', ' ').replace('.', ' ').split()
 
-        import ipdb ; ipdb.set_trace()
 
         page_text_S_len = len(page_text_S)
 
         cont = 0
-        
-        for i in range(page_text_S_len - 1):
+
+        i = 0
+
+        for i in range(0,page_text_S_len - 1):
             if page_text_S[i] == self.word:
                 cont += 1
                 
