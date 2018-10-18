@@ -17,11 +17,7 @@ class Amount_words():
         box = bs_obj.find("html")
 
         page_text = box.text
-        '''
-        page_text = UnicodeDammit(page_text, ["latin-1", "iso-8859-1", "utf-8"])
 
-        page_text = page_text.unicode_markup
-        '''
         page_text = unicodedata.normalize("NFKD", page_text)
 
         return page_text
