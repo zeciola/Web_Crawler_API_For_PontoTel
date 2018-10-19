@@ -43,9 +43,5 @@ def aw():
         num = wc.Amount_words(word,url).amount_words_result()
         return jsonify({"url":url,"result": num})
 
-#http://127.0.0.1:5000/aw?word=Netflix&url=http://www.adorocinema.com/noticias/series/noticia-144072/
-
-#http://127.0.0.1:5000/aw?word=Netflix&url=https://noticias.uol.com.br/cotidiano/ultimas-noticias/2018/10/17/mega-sena-pode-pagar-r-25-milhoes-nesta-quarta-feira.htm,http://agenciabrasil.ebc.com.br/geral/noticia/2018-10/conselho-do-tse-para-noticias-falsas-faz-reuniao-com-whatsapp,https://oglobo.globo.com/brasil/mpf-abre-investigacao-sobre-noticias-falsas-envolvendo-urnas-eletronicas-23159614
-
 if __name__ == '__main__':
     app.run(debug=True)

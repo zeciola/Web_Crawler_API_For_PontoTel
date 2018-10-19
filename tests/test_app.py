@@ -21,10 +21,6 @@ test_url_json_aw = {'result': 11, 'url': 'http://www.adorocinema.com/noticias/se
 
 test_mult_url_json_aw = [{'result': 11, 'url': 'http://www.adorocinema.com/noticias/series/noticia-144072/'}, {'result': 1, 'url': 'https://mundoconectado.com.br/noticias/v/7202/netflix-considera-baixar-preco-da-mensalidade-para-conseguir-mais-assinantes'}, {'result': 2, 'url': 'https://cinepop.com.br/the-princess-switch-vanessa-hudgens-e-uma-princesa-em-novo-filme-da-netflix-confira-a-imagem-191529'}, {'total_result': 14}]
 
-
-#mult url
-# http://127.0.0.1:5000/aw?word=Netflix&url=http://www.adorocinema.com/noticias/series/noticia-144072/,https://mundoconectado.com.br/noticias/v/7202/netflix-considera-baixar-preco-da-mensalidade-para-conseguir-mais-assinantes,https://cinepop.com.br/the-princess-switch-vanessa-hudgens-e-uma-princesa-em-novo-filme-da-netflix-confira-a-imagem-191529
-
 class Test_AW(TestCase):
     '''
     This class is for testing the API
@@ -34,25 +30,25 @@ class Test_AW(TestCase):
         '''
         This method is to verify that the connection to / is working code 200
         '''
-        self.assertEqual(get(test_url).status_code, 200, msg='/ is ok')
+        self.assertEqual(get(test_url).status_code, 200, msg='/ is not ok')
 
     def test_api_conection_aw(self):
         '''
         This method is to verify that the connection to /aw is working code 200
         '''
-        self.assertEqual(get(test_url_aw).status_code, 200, msg='/aw?word=any&url=any_url is ok')
+        self.assertEqual(get(test_url_aw).status_code, 200, msg='/aw?word=any&url=any_url is not ok')
 
     def test_api_json(self):
         '''
         This method is to check if the json of / is correstodent
         '''
-        self.assertDictEqual(get(test_url).json(), test_url_json, msg=f'/ json is ok return {test_url_json}')
+        self.assertDictEqual(get(test_url).json(), test_url_json, msg=f'/ json is not ok, return {test_url_json}')
 
     def test_api_json_aw(self):
         '''
         This method is to check if the json of /aw is correstodent
         '''
-        self.assertDictEqual(get(test_url_aw).json(), test_url_json_aw, msg=f'/aw?word=any&url=any json is ok return {test_url_json_aw}')
+        self.assertDictEqual(get(test_url_aw).json(), test_url_json_aw, msg=f'/aw?word=any&url=any json is not ok, return {test_url_json_aw}')
 
     def test_api_mult_json_aw(self):
         '''
