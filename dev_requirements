@@ -1,3 +1,4 @@
+aiofiles==0.4.0
 aniso8601==3.0.2
 astroid==2.0.4
 atomicwrites==1.2.1
@@ -14,6 +15,7 @@ djangorestframework==3.8.2
 Flask==1.0.2
 Flask-RESTful==0.3.6
 html5lib==1.0.1
+httptools==0.0.11
 idna==2.7
 ipdb==0.11
 ipython==7.0.1
@@ -27,6 +29,7 @@ lxml==4.2.5
 MarkupSafe==1.0
 mccabe==0.6.1
 more-itertools==4.3.0
+multidict==4.4.2
 parso==0.3.1
 pexpect==4.6.0
 pickleshare==0.7.5
@@ -39,14 +42,18 @@ pylint==2.1.1
 pytest==3.9.1
 pytz==2018.5
 requests==2.19.1
+sanic==0.8.3
 selenium==3.14.1
 simplegeneric==0.8.1
 six==1.11.0
 SQLAlchemy==1.2.12
 traitlets==4.3.2
 typed-ast==1.1.0
+ujson==1.35
 urllib3==1.23
+uvloop==0.11.2
 wcwidth==0.1.7
 webencodings==0.5.1
+websockets==5.0.1
 Werkzeug==0.14.1
 wrapt==1.10.11
